@@ -15,6 +15,22 @@ Because there is still waiting time between each workers.
 Source codes :
 
 - [Restaurant Concurrency](https://github.com/harryosmar/go-playground/blob/master/actions/simple_routine.go)
+    ```go
+        customers := [5]string{"customer 1", "customer 2", "customer 3", "customer 4", "customer 5"}
+        orderChan := make(chan string, 5)
+        foodChan := make(chan string, 5)
+        doneChannel := make(chan bool)
+        
+        go restaurant.handleCustomer(customers, orderChan)
+        go restaurant.handleOrder(orderChan, foodChan)
+        go restaurant.handleFood(foodChan, doneChannel)
+        
+        
+        select {
+        case <-doneChannel:
+          return c.JSON(http.StatusOK, "DONE")
+        }
+    ```
 - Time : 7.05 Secons
 - Output
     ```
