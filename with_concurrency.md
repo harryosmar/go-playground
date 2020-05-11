@@ -7,8 +7,8 @@ There is a restaurant with 3 workers :
 
 To handle 1 customer the workers need 1 seconds. **That's not correct**
 Because there is still waiting time between each workers.
-- `Chef` waiting for `order` from `cashier`
-- `waitress` waiting for `food` from `chef`
+- `Chef` waiting for an `order` from `cashier`
+- `waitress` waiting for the `food` from `chef`
 - But it will be faster compare to only 1 worker.
 
 
