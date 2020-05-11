@@ -1,6 +1,6 @@
 ![restaurant_illustration_with_concurrency](https://github.com/harryosmar/go-playground/blob/master/resources/restaurant_illustration_with_concurrency.png)
 
-There is a restaurant which only has 3 workers :
+There is a restaurant with 3 workers :
 - 1 worker as `cashier` : need 1 second to handle a customer, 
 - 1 worker as `chef` : need 1 second to cook the food, and 
 - the last worker as `waitress` : need 1 second to deliver the food to customer. 
