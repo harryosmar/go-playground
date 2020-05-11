@@ -1,6 +1,6 @@
 # Go Playground
 
-- [Requirements](#requirements)
+- [Concurrency](https://github.com/harryosmar/go-playground/blob/master/concurrency.md)
 
 ## Requirements
 
