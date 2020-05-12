@@ -58,3 +58,5 @@ Source codes :
 - [Goroutines](https://tour.golang.org/concurrency/1)
 - [Channels](https://tour.golang.org/concurrency/2)
 - [Buffered Channels](https://tour.golang.org/concurrency/3)
+- [Range and Close a Channel](https://tour.golang.org/concurrency/4)
+- [Select](https://tour.golang.org/concurrency/5)
