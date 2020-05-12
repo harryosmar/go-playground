@@ -40,33 +40,23 @@ curl --location --request GET 'http://localhost:9091/api/routine/simple'
         }
     ```
 - Time : 7.05 Secons
-- Console Output
+- Output
     ```
-    cashier is handling customer 4
     cashier is handling customer 1
     cashier is handling customer 2
-    cashier is handling customer 5
-    cashier is handling customer 3
-    chef cook order from customer 4
-    chef cook order from customer 5
     chef cook order from customer 1
     chef cook order from customer 2
-    chef cook order from customer 3
-    deliver food for order from customer 4
-    deliver food for order from customer 5
-    deliver food for order from customer 3
-    deliver food for order from customer 2
     deliver food for order from customer 1
-    ```
-- Http Response
-    ```json
-      [
-          "food for order from customer 4 is COMPLETED",
-          "food for order from customer 5 is COMPLETED",
-          "food for order from customer 3 is COMPLETED",
-          "food for order from customer 2 is COMPLETED",
-          "food for order from customer 1 is COMPLETED"
-      ]
+    cashier is handling customer 3
+    deliver food for order from customer 2
+    chef cook order from customer 3
+    cashier is handling customer 4
+    chef cook order from customer 4
+    deliver food for order from customer 3
+    cashier is handling customer 5
+    deliver food for order from customer 4
+    chef cook order from customer 5
+    deliver food for order from customer 5
     ```
   
 ## links
