@@ -95,6 +95,7 @@ func routes(_echo *echo.Echo) {
 	})
 
 	apiGroup.GET("/routine/simple", actions.NewRestaurant().Index)
+	apiGroup.GET("/routine/parallel", actions.NewParallelRestaurant().Index)
 }
 
 func middlewares(_echo *echo.Echo) {
