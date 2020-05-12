@@ -17,6 +17,7 @@ Source codes :
     customers := [5]string{"customer 1", "customer 2", "customer 3", "customer 4", "customer 5"}
     orderChan := make(chan string, 5)
   
+    // example of go routine cashier when handling the customer
     go handleCustomer(customers, orderChan)
     
     func handleCustomer(customers [5]string, orderChan chan string) {
