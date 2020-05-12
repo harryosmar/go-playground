@@ -1,3 +1,5 @@
+[Home/](https://github.com/harryosmar/go-playground/blob/master/concurrency.md) [Next](https://github.com/harryosmar/go-playground/blob/master/with_concurrency.md)
+
 ![restaurant_illustration_without_concurrency](https://github.com/harryosmar/go-playground/blob/master/resources/restaurant_illustration_without_concurrency.png)
 
 There is a restaurant with only 1 worker which responsibilities as : 

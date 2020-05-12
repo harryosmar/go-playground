@@ -1,3 +1,5 @@
+[Home/](https://github.com/harryosmar/go-playground/blob/master/concurrency.md) [Prev](https://github.com/harryosmar/go-playground/blob/master/without_concurrency.md)
+
 ![restaurant_illustration_with_concurrency](https://github.com/harryosmar/go-playground/blob/master/resources/restaurant_illustration_with_concurrency.png)
 
 There is a restaurant with 3 workers :
@@ -50,3 +52,9 @@ Source codes :
     deliver food for order from customer 4
     deliver food for order from customer 5
     ```
+  
+## links
+- [Learning Go’s Concurrency Through Illustrations](https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3)
+- [Goroutines](https://tour.golang.org/concurrency/1)
+- [Channels](https://tour.golang.org/concurrency/2)
+- [Buffered Channels](https://tour.golang.org/concurrency/3)
