@@ -14,35 +14,43 @@ Source codes :
 
 - [Restaurant Concurrency Parallel](https://github.com/harryosmar/go-playground/blob/master/actions/parallel_routine.go)
     ```go
-    customers := [5]string{"customer 1", "customer 2", "customer 3", "customer 4", "customer 5"}
-    orderChan := make(chan string, 5)
+    foodChan := make(chan string, 5)
+    completedOrdersChan := make(chan []string)
   
-    // example of go routine cashier when handling the customer
-    go handleCustomer(customers, orderChan)
-    
-    func handleCustomer(customers [5]string, orderChan chan string) {
-    	var wg sync.WaitGroup
-    
-    	for _, customer := range customers {
-    		wg.Add(1)
-    		customer := customer
-    
-    		go func(wg *sync.WaitGroup) {
-    			defer wg.Done()
-    
-    			// time needed by cashier to handle a customer
-    			time.Sleep(1 * time.Second)
-    			fmt.Println("cashier is handling", customer)
-    
-    			// cashier received an order from customer
-    			orderChan <- fmt.Sprintf("order from %s", customer)
-    		}(&wg)
-    	}
-    
-    	defer func() {
-    		wg.Wait()
-    		close(orderChan)
-    	}()
+    // example of go routine waitress when delivering the food to customer  
+    go func(foodChan chan string, completedOrdersChan chan []string) {
+        	var wg sync.WaitGroup
+        	var completedOrders []string
+        	var mux sync.Mutex
+        
+        	for food := range foodChan {
+        		wg.Add(1)
+        		food := food
+        
+        		go func(wg *sync.WaitGroup) {
+        			defer wg.Done()
+        
+        			// time needed by waitress to deliver a food to customer
+        			time.Sleep(1 * time.Second)
+        			fmt.Println("deliver", food)
+        
+        			mux.Lock()
+        			// Lock so only one goroutine at a time can access the completedOrders
+        			completedOrders = append(completedOrders, fmt.Sprintf("%s is COMPLETED", food))
+        			mux.Unlock()
+        		}(&wg)
+        	}
+        
+        	// all foods delivered
+        	defer func() {
+        		wg.Wait()
+        		completedOrdersChan <- completedOrders
+        	}()
+    }(foodChan, completedOrdersChan)
+  
+    select {
+    	case completedOrders := <-completedOrdersChan:
+    		return c.JSON(http.StatusOK, completedOrders)
     }
     ```
 - Time : 3.01 Secons
