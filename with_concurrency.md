@@ -58,7 +58,7 @@ curl --location --request GET 'http://localhost:9091/api/routine/simple'
     deliver food for order from customer 2
     deliver food for order from customer 1
     ```
-- Http Reponse
+- Http Response
     ```json
       [
           "food for order from customer 4 is COMPLETED",
