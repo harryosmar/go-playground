@@ -8,10 +8,12 @@ There is a restaurant with 3 workers :
 - the last worker as `waitress` : need 1 second to deliver the food to customer. 
 
 To handle 1 customer the workers need 1 seconds. **That's not correct**
-Because there is still waiting time between each workers.
-- `Chef` waiting for an `order` from `cashier`
-- `waitress` waiting for the `food` from `chef`
-- But it will be faster compare to only 1 worker.
+Because there is still waiting time between each workers when the process started
+- `Chef` waiting for an `order` from `cashier` : 1 second
+- `waitress` waiting for the `food` from `chef` : 1 second
+- `waiting time = count(worker) - 1`
+- The total time should be : `waiting time + count(customer) = (3 - 1 + 5) = 7 seconds`
+
 
 
 Source codes :
