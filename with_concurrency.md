@@ -18,6 +18,10 @@ Because there is still **waiting** time between each workers **when the process 
 
 Source codes :
 
+```
+curl --location --request GET 'http://localhost:9091/api/routine/simple'
+```
+
 - [Restaurant Concurrency](https://github.com/harryosmar/go-playground/blob/master/actions/simple_routine.go)
     ```go
         customers := [5]string{"customer 1", "customer 2", "customer 3", "customer 4", "customer 5"}

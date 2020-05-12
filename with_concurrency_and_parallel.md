@@ -11,6 +11,9 @@ There is a restaurant with :
 To handle 5 customers all the workers only need 3 seconds.
 
 Source codes :
+```
+curl --location --request GET 'http://localhost:9091/api/routine/parallel'
+```
 
 - [Restaurant Concurrency Parallel](https://github.com/harryosmar/go-playground/blob/master/actions/parallel_routine.go)
     ```go
