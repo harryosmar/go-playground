@@ -99,6 +99,7 @@ func routes(_echo *echo.Echo) {
 	apiGroup.GET("/routine/pipeline", actions.NewPipelineSample().Index)
 	apiGroup.GET("/routine/fan/in/yes", actions.NewFaninSample().WithFanIn)
 	apiGroup.GET("/routine/fan/in/no", actions.NewFaninSample().WithoutFanIn)
+	apiGroup.GET("/routine/fan/in/parallel", actions.NewFaninParallel().Index)
 }
 
 func middlewares(_echo *echo.Echo) {

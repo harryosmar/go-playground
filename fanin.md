@@ -26,7 +26,7 @@ Source codes :
     Joe 4
     Ann 4
     
-    // time 4.01 seconds
+    // time 5.01 seconds
     ```
 
 - With fan in
@@ -45,9 +45,11 @@ Source codes :
     Ann 4
     Joe 4
     
-    // time 4.01 seconds
+    // time 5.01 seconds
     ```
-  
+-  [With fan in + parallel](https://github.com/harryosmar/go-playground/blob/master/actions/fanin_parallel.go)
+    - time 1.08 seconds
+
 ## links
 - [pipeline](https://blog.golang.org/pipelines)
 - [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs&t=938s)
