@@ -50,3 +50,4 @@ Source codes :
   
 ## links
 - [pipeline](https://blog.golang.org/pipelines)
+- [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs&t=938s)
