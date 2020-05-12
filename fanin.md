@@ -8,46 +8,45 @@
 
 
 Source codes :
-```
-curl --location --request GET 'http://localhost:9091/api/routine/fan/in/no'
-
-// output 
-// the output is ordered Joe first then Ann. Because there is channel block on receive
-Joe 0
-Ann 0
-Joe 1
-Ann 1
-Joe 2
-Ann 2
-Joe 3
-Ann 3
-Joe 4
-Ann 4
-
-// time 4.01 seconds
-```
-
-
-```
-curl --location --request GET 'http://localhost:9091/api/routine/fan/in/yes'
-
-// output is random. Who's come first .
-Ann 0
-Joe 0
-Joe 1
-Ann 1
-Ann 2
-Joe 2
-Ann 3
-Joe 3
-Ann 4
-Joe 4
-
-// time 2.01 seconds
-```
-
 - [Fain Code](https://github.com/harryosmar/go-playground/blob/master/actions/fanin.go)
-- Time : 4.01 Seconds
+- Without fan in
+    ```
+    curl --location --request GET 'http://localhost:9091/api/routine/fan/in/no'
+    
+    // output 
+    // the output is ordered Joe first then Ann. Because there is channel block on receive
+    Joe 0
+    Ann 0
+    Joe 1
+    Ann 1
+    Joe 2
+    Ann 2
+    Joe 3
+    Ann 3
+    Joe 4
+    Ann 4
+    
+    // time 4.01 seconds
+    ```
+
+- With fan in
+    ```
+    curl --location --request GET 'http://localhost:9091/api/routine/fan/in/yes'
+    
+    // output is random. Who's come first .
+    Ann 0
+    Joe 0
+    Joe 1
+    Ann 1
+    Ann 2
+    Joe 2
+    Ann 3
+    Joe 3
+    Ann 4
+    Joe 4
+    
+    // time 4.01 seconds
+    ```
   
 ## links
 - [pipeline](https://blog.golang.org/pipelines)
