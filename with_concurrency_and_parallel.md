@@ -9,8 +9,8 @@ There is a restaurant with :
 
 
 To handle 5 customers, all the workers **should be** only took 1 second. But **IS NOT** because there is still **waiting time** 2 seconds when the process started :
-- waiting 1 second for the order ready
-- waiting 1 second for the food ready
+- waiting 1 second for the 1st order ready
+- waiting 1 second for the 1st food ready
 
 So the total time should be `parallel time + waiting time = 1 + 2 = 3 seconds`
 

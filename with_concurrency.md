@@ -10,8 +10,8 @@ There is a restaurant with 3 workers :
 "To handle 5 customer the workers need 5 seconds". **That's not correct**
 Because there is still **waiting** time between each workers **when the process started**
 - `waiting time = count(worker) - 1`
-    - `Chef` waiting for an `order` from `cashier` : 1 second
-    - `Waitress` waiting for the `food` from `chef` : 1 second
+    - `Chef` waiting for 1st `order` from `cashier` : 1 second
+    - `Waitress` waiting for 1st `food` from `chef` : 1 second
 - The total time should be : `waiting time + count(customer) = (3 - 1 + 5) = 7 seconds`
 
 
