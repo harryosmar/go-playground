@@ -11,7 +11,7 @@ There is a restaurant with 3 workers :
 Because there is still **waiting** time between each workers **when the process started**
 - `waiting time = count(worker) - 1`
     - `Chef` waiting for an `order` from `cashier` : 1 second
-    - `waitress` waiting for the `food` from `chef` : 1 second
+    - `Waitress` waiting for the `food` from `chef` : 1 second
 - The total time should be : `waiting time + count(customer) = (3 - 1 + 5) = 7 seconds`
 
 
