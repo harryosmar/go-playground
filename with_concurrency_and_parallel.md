@@ -1,4 +1,4 @@
-[Home/](https://github.com/harryosmar/go-playground/blob/master/concurrency.md) [Prev/](https://github.com/harryosmar/go-playground/blob/master/with_concurrency.md)
+[Home/](https://github.com/harryosmar/go-playground/blob/master/concurrency.md) [Prev/](https://github.com/harryosmar/go-playground/blob/master/with_concurrency.md) [Next](https://github.com/harryosmar/go-playground/blob/master/pipeline.md)
 
 ![restaurant_illustration_with_concurrency and parallel](https://github.com/harryosmar/go-playground/blob/master/resources/restaurant_illustration_with_concurrency_and_parallel.png)
 
@@ -92,5 +92,5 @@ curl --location --request GET 'http://localhost:9091/api/routine/parallel'
     ```
   
 ## links
-- [WaitGroups : To wait for multiple goroutines to finish](https://gobyexample.com/waitgroups)
+- [sync WaitGroups : To wait for multiple goroutines to finish](https://gobyexample.com/waitgroups)
 - [sync.Mutex : only one goroutine can access a variable at a time to avoid conflicts](https://tour.golang.org/concurrency/9)

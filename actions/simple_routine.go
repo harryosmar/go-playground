@@ -24,7 +24,6 @@ func (restaurant *Restaurant) Index(c echo.Context) error {
 	go restaurant.handleOrder(orderChan, foodChan)
 	go restaurant.handleFood(foodChan, doneChannel)
 
-
 	select {
 	case <-doneChannel:
 		return c.JSON(http.StatusOK, "DONE")
@@ -41,6 +40,7 @@ func (restaurant *Restaurant) handleCustomer(customers [5]string, orderChan chan
 		orderChan <- fmt.Sprintf("order from %s", customer)
 	}
 
+	// close a channel to indicate that no more values will be sent.
 	close(orderChan)
 }
 
@@ -54,6 +54,7 @@ func (restaurant *Restaurant) handleOrder(orderChan chan string, foodChan chan s
 		foodChan <- fmt.Sprintf("food for %s", order)
 	}
 
+	// close a channel to indicate that no more values will be sent.
 	close(foodChan)
 }
 
@@ -66,4 +67,6 @@ func (restaurant *Restaurant) handleFood(foodChan chan string, doneChannel chan 
 
 	// all foods delivered
 	doneChannel <- true
+
+	close(doneChannel)
 }

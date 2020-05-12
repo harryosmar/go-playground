@@ -52,6 +52,7 @@ func (parallelRestaurant *ParallelRestaurant) handleCustomer(customers [5]string
 
 	defer func() {
 		wg.Wait()
+		// close a channel to indicate that no more values will be sent.
 		close(orderChan)
 	}()
 }
@@ -77,6 +78,7 @@ func (parallelRestaurant *ParallelRestaurant) handleOrder(orderChan chan string,
 
 	defer func() {
 		wg.Wait()
+		// close a channel to indicate that no more values will be sent.
 		close(foodChan)
 	}()
 }
@@ -108,5 +110,6 @@ func (parallelRestaurant *ParallelRestaurant) handleFood(foodChan chan string, c
 	defer func() {
 		wg.Wait()
 		completedOrdersChan <- completedOrders
+		close(completedOrdersChan)
 	}()
 }
