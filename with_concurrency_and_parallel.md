@@ -8,7 +8,12 @@ There is a restaurant with :
 - 5 workers as `waitress` : a `waitress` need 1 second to deliver the food to all customer. 
 
 
-To handle 5 customers all the workers only need 3 seconds.
+To handle 5 customers, all the workers **should be** only took 1 second. But **IS NOT** because there is still **waiting time** 2 seconds when the process started :
+- waiting 1 second for the order ready
+- waiting 1 second for the food ready
+
+So the total time should be `parallel time + waiting time = 1 + 2 = 3 seconds`
+
 
 Source codes :
 ```
