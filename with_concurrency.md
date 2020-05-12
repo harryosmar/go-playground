@@ -1,4 +1,4 @@
-[Home/](https://github.com/harryosmar/go-playground/blob/master/concurrency.md) [Prev](https://github.com/harryosmar/go-playground/blob/master/without_concurrency.md)
+[Home/](https://github.com/harryosmar/go-playground/blob/master/concurrency.md) [Prev/](https://github.com/harryosmar/go-playground/blob/master/without_concurrency.md) [Next](https://github.com/harryosmar/go-playground/blob/master/with_concurrency_and_parallel.md)
 
 ![restaurant_illustration_with_concurrency](https://github.com/harryosmar/go-playground/blob/master/resources/restaurant_illustration_with_concurrency.png)
 
