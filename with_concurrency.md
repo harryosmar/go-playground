@@ -7,7 +7,7 @@ There is a restaurant with 3 workers :
 - 1 worker as `chef` : need 1 second to cook the food, and 
 - the last worker as `waitress` : need 1 second to deliver the food to customer. 
 
-To handle 1 customer the workers need 1 seconds. **That's not correct**
+"To handle 5 customer the workers need 5 seconds". **That's not correct**
 Because there is still waiting time between each workers when the process started
 - `Chef` waiting for an `order` from `cashier` : 1 second
 - `waitress` waiting for the `food` from `chef` : 1 second
