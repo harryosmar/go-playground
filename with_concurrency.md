@@ -19,26 +19,15 @@ Because there is still **waiting** time between each workers **when the process 
 Source codes :
 
 ```
-curl --location --request GET 'http://localhost:9091/api/routine/simple'
+curl --location --request GET 'http://localhost:9091/api/routine/simple/v2'
 ```
 
-- [Restaurant Concurrency](https://github.com/harryosmar/go-playground/blob/master/actions/simple_routine.go)
-    ```go
-        customers := [5]string{"customer 1", "customer 2", "customer 3", "customer 4", "customer 5"}
-        orderChan := make(chan string, 5)
-        foodChan := make(chan string, 5)
-        doneChannel := make(chan bool)
-        
-        go restaurant.handleCustomer(customers, orderChan)
-        go restaurant.handleOrder(orderChan, foodChan)
-        go restaurant.handleFood(foodChan, doneChannel)
-        
-        
-        select {
-        case <-doneChannel:
-          return c.JSON(http.StatusOK, "DONE")
-        }
-    ```
+- [Action Code](https://github.com/harryosmar/go-playground/blob/master/actions/simple_routine_v2.go)
+- [Restaurant Code](https://github.com/harryosmar/go-playground/blob/master/restaurant/restaurant.go)
+- [Cashier Code](https://github.com/harryosmar/go-playground/blob/master/restaurant/cashier.go)
+- [Chef Code](https://github.com/harryosmar/go-playground/blob/master/restaurant/chef.go)
+- [Waitress Code](https://github.com/harryosmar/go-playground/blob/master/restaurant/waitress.go)
+  
 - Time : 7.05 Secons
 - Output
     ```

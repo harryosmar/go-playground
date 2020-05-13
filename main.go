@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bitbucket.org/wowbid/order-service/actions"
+	"bitbucket.org/wowbid/go-playground/actions"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/labstack/echo-contrib/prometheus"
@@ -95,6 +95,7 @@ func routes(_echo *echo.Echo) {
 	})
 
 	apiGroup.GET("/routine/simple", actions.NewRestaurant().Index)
+	apiGroup.GET("/routine/simple/v2", actions.NewRestaurantActionV2().Index)
 	apiGroup.GET("/routine/parallel", actions.NewParallelRestaurant().Index)
 	apiGroup.GET("/routine/pipeline", actions.NewPipelineSample().Index)
 	apiGroup.GET("/routine/fan/in/yes", actions.NewFaninSample().WithFanIn)

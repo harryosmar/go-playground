@@ -1,7 +1,7 @@
 package actions
 
 import (
-	"bitbucket.org/wowbid/order-service/utils"
+	"bitbucket.org/wowbid/go-playground/utils"
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"net/http"

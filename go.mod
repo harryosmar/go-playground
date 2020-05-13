@@ -1,4 +1,4 @@
-module bitbucket.org/wowbid/order-service
+module bitbucket.org/wowbid/go-playground
 
 go 1.12
 
