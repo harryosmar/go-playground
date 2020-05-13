@@ -10,7 +10,7 @@ type RestaurantAction struct {
 	restaurant *restaurant.RestaurantV2
 }
 
-func NewRestaurantActionV2() *RestaurantAction {
+func NewRestaurantAction() *RestaurantAction {
 	return &RestaurantAction{restaurant: restaurant.NewRestaurantV2()}
 }
 

@@ -17,50 +17,15 @@ So the total time should be `parallel time + waiting time = 1 + 2 = 3 seconds`
 
 Source codes :
 ```
-curl --location --request GET 'http://localhost:9091/api/routine/parallel'
+curl --location --request GET 'http://localhost:9091/api/routine/parallel/v2'
 ```
 
-- [Restaurant Concurrency Parallel](https://github.com/harryosmar/go-playground/blob/master/actions/parallel_routine.go)
-    ```go
-    foodChan := make(chan string, 5)
-    completedOrdersChan := make(chan []string)
-  
-    // example of go routine waitress when delivering the food to customer  
-    go func(foodChan chan string, completedOrdersChan chan []string) {
-        	var wg sync.WaitGroup
-        	var completedOrders []string
-        	var mux sync.Mutex
-        
-        	for food := range foodChan {
-        		wg.Add(1)
-        		food := food
-        
-        		go func(wg *sync.WaitGroup) {
-        			defer wg.Done()
-        
-        			// time needed by waitress to deliver a food to customer
-        			time.Sleep(1 * time.Second)
-        			fmt.Println("deliver", food)
-        
-        			mux.Lock()
-        			// Lock so only one goroutine at a time can access the completedOrders
-        			completedOrders = append(completedOrders, fmt.Sprintf("%s is COMPLETED", food))
-        			mux.Unlock()
-        		}(&wg)
-        	}
-        
-        	// all foods delivered
-        	defer func() {
-        		wg.Wait()
-        		completedOrdersChan <- completedOrders
-        	}()
-    }(foodChan, completedOrdersChan)
-  
-    select {
-    	case completedOrders := <-completedOrdersChan:
-    		return c.JSON(http.StatusOK, completedOrders)
-    }
-    ```
+- [Action Code](https://github.com/harryosmar/go-playground/blob/master/actions/parallel_routine_v2.go)
+- [Restaurant Code](https://github.com/harryosmar/go-playground/blob/master/restaurant_parallel/restaurant.go)
+- [Cashier Code](https://github.com/harryosmar/go-playground/blob/master/restaurant_parallel/cashier.go)
+- [Chef Code](https://github.com/harryosmar/go-playground/blob/master/restaurant_parallel/chef.go)
+- [Waitress Code](https://github.com/harryosmar/go-playground/blob/master/restaurant_parallel/waitress.go)
+
 - Time : 3.01 Secons
 - Console Output
     ```

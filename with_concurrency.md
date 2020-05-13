@@ -55,3 +55,4 @@ curl --location --request GET 'http://localhost:9091/api/routine/simple/v2'
 - [Buffered Channels](https://tour.golang.org/concurrency/3)
 - [Range and Close a Channel](https://tour.golang.org/concurrency/4)
 - [Select](https://tour.golang.org/concurrency/5)
+- [Pipelines](https://blog.golang.org/pipelines)
